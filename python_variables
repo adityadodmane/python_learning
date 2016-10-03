@@ -4,3 +4,9 @@
 #Declaring Variables
 x = 10
 print x
+
+#Declaring String
+x = "Hello Aditya"
+print x 
+
+
