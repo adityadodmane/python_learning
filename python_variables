@@ -1,0 +1,6 @@
+#Python Variables
+#############################################################
+
+#Declaring Variables
+x = 10
+print x
