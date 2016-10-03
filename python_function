@@ -1,1 +1,55 @@
 #Working with Python Function
+#File Name: python_function
+#Author : Aditya Hegde
+
+#Function without any arguments
+def func1():
+    print "Hello from Function1"
+
+func1()
+#Prints "Hello From Function"
+print func1() #Invoking function and print the same o/p
+#Prints "Hello From Function1"
+#Null --- As there is no return values
+print func1
+#Returns the the memory location where the func1() function been defined.
+
+#####################################
+
+#Function that takes arguments
+
+def func2(arg1,arg2):
+    print arg1,"",arg2
+
+#func2(10,20)
+#print func2(5,10) #This will print 2 values along with none as there is no return values
+#print func2
+
+#Function that returns a value
+def func3(a,b):
+    return a * b
+#func3(5,10) -- This will not return any value as there nothing is defined to hold the returned result
+#print func3(5,10)
+#print func3
+
+#Function with default value as an argument
+def func4(num,x=2):
+    res=0
+    for i in range(x):
+        res=res+num
+    return res
+#print func4(2)
+#print "Function4:",func4(2,3)
+#print func4(x=1,num=2) #We can interchange the order of the argument
+
+##Function with variable argument
+
+def func5(*args):
+    res = 0
+    for i in args:
+        res=res+i
+    return res
+print func5(1,2,3) #Here we can change the number of variables
+
+
+
