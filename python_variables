@@ -5,8 +5,21 @@
 x = 10
 print x
 
-#Declaring String
+#Re Declaring String
 x = "Hello Aditya"
 print x 
 
+#Concatinating String and Integer 
+#Like in Javascript we can't concate String and other datatype directly. 
+#print "Hello"+ 5 
+print "Hello" + str(5)
+#Above will throw an error.
 
+#Global vs Local Vafiables
+def global_fn():
+    #global x #defining x as a variable
+    x = "aditya"
+    print x
+
+global_fn()
+print x #when x is global it will print "aditya" else it will print "aditya hegde"
