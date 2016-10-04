@@ -1,0 +1,15 @@
+#Working with if,elif & else conditions
+#Author : Aditya Hegde
+#Date: Oct 4th, 2016
+x=10
+y=20
+if x < y:
+    print "x is less than y"
+elif x > y:
+    print "x is greater than y"
+else:
+    print "x and y are equal"
+#condition_demo(20,10)
+
+#implementing A if C else B
+#print "x is greater than y" if (x >y) else "x is less than y or equal to y"
