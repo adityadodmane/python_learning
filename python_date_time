@@ -1,0 +1,41 @@
+'''
+Program: Demo on Datetime class
+Author: Aditya Hegde
+Date: 08 Oce, 2016
+'''
+
+from datetime import date
+from datetime import time
+from datetime import datetime
+
+def main():
+    #Printing Current Date
+    today=date.today()
+    print "Today's Date:",today
+
+    #Print Individual Components
+    print "Date Components:",today.day,today.month,today.year
+
+    #retrive week day (monday =0, sunday=6)
+    print "Today's Weekday:",today.weekday()
+
+    #Datetime Object
+    today=datetime.now()
+    print "Current Date & Time:",today
+
+    #Get the current Time
+    t=datetime.time(datetime.now())
+    print "Cureent Time:",t
+    #Get the Current Date
+    t=datetime.date(datetime.now())
+    print "Current Date:",t
+
+    #Get the name of the day
+    today = datetime.now() #Holds Current Date & Time
+    w=datetime.weekday(today) #Collects weekday part from current date & time
+    days=['Mon','Tue','Wed','Thur','Fri','Sat','Sun']
+    print "Today's Number is",w
+    print "Name of Today is:",days[w]
+if __name__ == '__main__':
+    main()
+
