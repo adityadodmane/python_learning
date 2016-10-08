@@ -1,5 +1,6 @@
 '''
 Python Loops: for and while
+Desac: Loops: Repeating code execution for a condition
 Author: Aditya Hegde
 Date : 4th Oct,2016
 '''
@@ -7,11 +8,42 @@ Date : 4th Oct,2016
 '''
 Repeating code over and over again
 '''
-def loop():
+'''
+def while_loop():
     x=0
     #define a while loop
     while x<5:
         print x
         x=x+1
 
-print loop()
+while_loop()
+'''
+
+#Defining a for loop with range
+'''
+for i in range(1,10):
+    print i
+'''
+
+#Defining for loop with collections
+'''
+col=['aditya','loves','shama']
+for i in col:
+    print i
+'''
+
+#for loop with break,continue & if
+'''
+for i in range(2,10):
+    #if(i==6): break #break will terminate from the loop once the condition matches and omits other execution
+    if(i%2==0): continue #continue will skip the execution when it encounters the condition
+    print i
+'''
+
+#for loop with enumerate function which returns the index of the object in either list or collection
+d=['aditya','loves','shama']
+for i,j in enumerate(d):
+    print i,j
+
+#there is a difference between printing i,j in reference to emumerate
+
