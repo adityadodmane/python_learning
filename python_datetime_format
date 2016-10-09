@@ -1,0 +1,44 @@
+'''
+Description: Code to format Date & TIme Output
+Author: Aditya Hegde
+Date: 08 Oct,2016
+'''
+
+from datetime import datetime
+
+#The code is to format date & time output using available python functions.
+
+def main():
+    now=datetime.now()
+    print now.strftime("%Y") #Full year with century
+    print now.strftime("%y") #Full year without century (last 2 digit)
+
+    #Print Abbriviated Weekday,day of the month,Month and abbriviated year
+    print now.strftime("%A,%d %B,%Y")
+    #Abbriviated
+    print now.strftime("%a,%d %b,%y")
+
+    #Date Formatting
+    #Printing Locale's Date, time and other attributes
+    # %c - locale date & time, %x - locale's date, %X - locale's time
+    print "-----Date Format -------"
+    print now.strftime("%c") #locale's date & time
+    print now.strftime("%x") #locale's date
+    print now.strftime("%X") #locale's time
+
+
+    #Time Formatting
+    #%I/%H 12/24 hour format
+    #%M - Minute
+    #%S - second
+    #p - locale's AM / PM
+    print "-----Time Format ------"
+    print now.strftime("%I:%M:%S %p") #12 hour format
+    print now.strftime("%H:%M:%S %p") #24 hour format
+
+
+if __name__ == '__main__':
+    main()
+####Date Formatting #####
+## %y/%Y- Year, %a/%A - Weekday, %b/%B- month, %d - day of month
+
