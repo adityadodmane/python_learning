@@ -1,0 +1,64 @@
+'''
+Description: Performing matemetical operation on date & time using timedelta class
+'timedelta' is a class which helps to perform manipulation on time & date constraints
+Author: Aditya Hegde
+Date: 09 Oct,2016
+'''
+
+from datetime import datetime
+from datetime import date
+from datetime import time
+#importing timedelta class
+from datetime import timedelta
+
+#build a basic timedelta class and print it
+print timedelta(days=31,hours=12,minutes=30)
+
+#manipulation using timedelta
+
+#Print today's date & time
+
+print "Today's Date is:"+str(datetime.now())
+
+#Print today's date one year from now
+print "Date one year from now is:"+str(datetime.now()+ timedelta(days=365))
+
+#Printing multiple arguments with timedelta class
+print "3 weeks and 4 days from now:"+str(datetime.now() + timedelta(weeks=3,days=4))
+
+#Calculate the date 1 week ago and formatted as a string using strftime()
+
+#print "The date one week ago from now:"+str(datetime.now() - timedelta(weeks=1))
+d=datetime.now() - timedelta(weeks=1)
+s=d.strftime("%A,%d %B,%Y") # formatting to string
+print "One week ago the date was:"+s
+
+
+##########################################################################################
+'''
+How many days until april fools day
+Step 1: collect the current day info
+Step 2: Collect the current year's April Fools Day
+Step 3: Compair today's date & this year's april fool date and findout how many days we are lagging or trailing
+Step 4: replace today's year by next year
+Step 5: find the difference between today's date and next year's april fools day
+'''
+print "-------------April Fool's Day Manipulation ----------------------"
+today=date.today() #Today's Date
+print "Today:"+str(today)
+afd=date(today.year,4,1) #fetching april fools day for this year
+print "This Year's April Fool's Day:"+str(afd)
+
+#compair today's date & afd and find out what's the difference
+
+if afd<today:
+    print "April Fool's Day is already went by %d days ago" %((today-afd).days)
+    afd=afd.replace(year=today.year+1) #If afd < today get the april fool's date for next year
+    print "Next Year's April Fools Day is:",afd
+#Calculating time left for next year's april fool's day
+time_to_afd=afd-today
+print "Upcomming April Fool's Day Falls after:",time_to_afd
+
+'''
+Note: Always datetime o/p mis matches with string format. We can concat the dattime o/p with string
+'''
