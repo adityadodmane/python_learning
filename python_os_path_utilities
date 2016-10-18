@@ -1,0 +1,48 @@
+'''
+Description : Working with os.path module
+'''
+
+#Import os module
+import os
+#Importing Path module from OS
+from os import path
+import datetime
+from datetime import date,time,timedelta
+import time
+def main():
+    #Printing OS Name:
+    print  "Your OS Name: "+os.name
+
+    #Demo on path module
+    #Check for whether file exists in a python path
+    print "Is file exists: "+str(path.exists("hello_python.txt"))
+    #Check mentioned file is a file or not?
+    print "Is a file: "+str(path.isfile("hello_python.txt"))
+    #Check mentioned parameter is a directory
+    print "Is a directory: "+str(path.isdir("hello_python.txt"))
+
+    #Printing file path in real time programming
+    print "The Actual Path of the file is: "+str(path.realpath("hello_python.txt"))
+
+    #printing actual path and file name
+    print "Actual path & File Name: "+str(path.split(path.realpath("hello_python.txt")))
+
+    #We can use split() function to split a result into 2
+
+    # Getting the file modification Time
+    #time.ctime() will return the time in readable format
+    #path.getmtime() will return last modified time for a file
+    mod_time1 = time.ctime(path.getmtime("hello_python.txt"))
+    #mod_time = path.getmtime("hello_python.txt") - the o/p is in readable format
+    mod_time2 = datetime.datetime.fromtimestamp(path.getmtime("hello_python.txt"))
+    print "Last modified time for file1 is:",mod_time1
+    print "Last modified time for file2 is:",mod_time2
+    #Look into building datetime module and depending functions
+
+    #Calculate how long ago the file was modified
+    td = datetime.datetime.now() - datetime.datetime.fromtimestamp(path.getmtime("hello_python.txt"))
+    print "the file was modified before "+str(td)+" hours"
+    print "or in seconds: "+str(td.total_seconds())
+
+if __name__ == '__main__':
+    main()
