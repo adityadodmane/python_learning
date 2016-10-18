@@ -1,0 +1,47 @@
+import os
+#Importing shell util module
+import shutil
+from os import path
+from shutil import make_archive
+from zipfile import ZipFile
+def main():
+    if path.exists("hello_brillians.txt"):
+       print "File Exists"
+       src = path.realpath("hello_brillians.txt")
+
+    #Printing the File Name and Path Separately
+    head, tail =path.split(src)
+    print "File Path: "+str(head)
+    print "File Name: "+str(tail)
+
+    #Backup the file and create a copy of the file in destination
+    dest = src + ".bak" #adding a file extension to existing file
+    #Creating a copy of a file as .bak
+    shutil.copy(src,dest)
+    #copy() copies only the file content
+
+    #Copy file metadata like file permission, modification time and other info
+    dest = src + ".bak"
+    shutil.copystat(src,dest) #copystat() will copy the file metadata like file permission, modified time etc
+    print "Destination File is: "+str(dest)
+
+    #Renaming the existing file
+    #os.rename("hello_brillio.txt","hello_brillians.txt")
+
+    #Creating Archive of existing files
+    #dir,dir_tail = path.split(src)
+    #shutil.make_archive("archive","zip",dir)
+    #make_archive() will zip all the files in dir path in .zip format by name archive.zip
+
+    #More control on zip feature
+    #We can zip the files which we want
+    with ZipFile("test_file.zip","w") as newzip:
+        #test_file.zip will be a destination file
+        #newzip is an object of ZipFile class
+        #newzip.write() will write specific file to zip folder
+        newzip.write("hello_brillians.txt")
+        newzip.write("hello_brillians.txt.bak")
+        newzip.write("hello_python.txt.bak")
+
+if __name__ == '__main__':
+    main()
