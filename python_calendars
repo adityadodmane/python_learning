@@ -1,0 +1,55 @@
+'''
+Description : Implementing Calendar Class
+Author : Aditya Hegde
+Date : Oct 18th,2016
+'''
+
+import calendar
+
+#Creata a plain text calendar
+
+#Defining Sunday as first day of the month
+#c = calendar.TextCalendar(calendar.SUNDAY)
+
+#defining the calendar month
+#str = c.formatmonth(2016,10,0,0)
+#print str
+
+#Create HTML Calendar
+#c = calendar.HTMLCalendar(calendar.SUNDAY)
+
+#str = c.formatmonth(2016,10)
+#print str
+
+#loop over the days of a month
+#print "Iterate over Month Days:"
+#for i in c.itermonthdays(2016,10):
+ #   print i
+#Zeros in o/p points to the days of a week which belongs to another month
+
+
+#Calendar provides useful utilities for the given locale,
+#such as name of months, days in both full & abbrivated forms
+
+#print "Month Name:"
+#for i in calendar.month_name:
+  #  print i
+
+#print "\nDay Name:"
+#for j in calendar.day_name:
+    #print j
+ #   print  first friday of a week in a month where the employee meets
+
+for m in range(1,13):
+    cal=calendar.monthcalendar(2016,m) #Iterate over all the months in an Year
+    weekone = cal[0] # Holds 1st week of the month
+    weektwo = cal[1] # Holds 2nd Week of the month
+
+    if weekone[calendar.FRIDAY] != 0:
+        #here 0 represents day belongs to another month
+        meetday = weekone[calendar.FRIDAY]
+    else :
+        meetday = weektwo[calendar.FRIDAY]
+
+    print "%10s %2d" % (calendar.month_name[m],meetday)
+
