@@ -1,0 +1,37 @@
+'''
+Desc : Read and Write FIles using inbuilt functions.
+Author : Aditya Hegde
+Date : Oct 18th, 2016
+'''
+
+def main():
+    # Open a file in write mode
+    #If the file is already there, write will override the record
+    f=open("hello_python.txt","w+")
+
+    #Open the file in append mode
+    #Append will add new data at the end of the file instead of overriding
+    #f=open("hello_python.txt","a+")
+    #Writing data into the file
+    for i in range(10):
+        f.write("Hello line: %d\r\n" %(i+1))
+    #Close the file when the action is done
+    #f.close()
+    #File will be created in same location where the script is there.
+
+    #Open the file in read mode
+    f=open("hello_python.txt","r")
+    #Check if the file is opened in read mode
+    #if f.mode == 'r':
+        #content = f.read()
+        #Print the file content
+        #print content
+
+    #Read the file line by line into a list and print the same
+    #readline() will read one single and split it into individual characters
+    #readlines() will read each individual line and store it into some list
+    fl=f.readlines()
+    for i in fl:
+        print i
+if __name__ == '__main__':
+    main()
